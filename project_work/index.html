@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/templatemo-style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <!-- <div class="container">
+            <h1 class="text-center">ASML Work</h1>
+        </div> -->
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+
+            <!-- ===================================================== -->
+            <!-- PROJECT 1: GenAI Documentation Validation Pipeline    -->
+            <!-- ===================================================== -->
+
+            <section>
+                <h2 class="text-center">Generative AI Documentation Validation Pipeline</h2>
+                <h3>Project Overview</h3>
+                <p>
+                    In this project I developed an automated, scalable pipeline for the continuous validation and quality assurance 
+                    of Generative AI (GenAI) system outputs, specifically focusing on documentation generation 
+                    (e.g., technical manuals, user guides, or compliance reports). The core challenge was shifting from 
+                    manual review to an objective, repeatable, and fast process to ensure GenAI-produced content is factual, 
+                    coherent, and adheres to specific formatting/style guides before deployment.
+                </p>
+
+                <h3>Technical Details & Innovation</h3>
+                <ul>
+                    <li><strong>Pipeline Architecture:</strong> Implemented an end-to-end CI/CD workflow (e.g., using GitHub Actions, Jenkins, or an ML orchestration tool like Kubeflow/Prefect) that triggers upon code or prompt changes.</li>
+                    <li><strong>Evaluation Metrics (The "Validation"):</strong> The pipeline moves beyond simple unit testing by incorporating GenAI-as-a-Judge and quantitative metrics:
+                        <ul>
+                            <li><strong>Factuality & Coherence:</strong> Used a secondary, proprietary/finetuned LLM (the "evaluator") prompted to grade the primary model's output against a Retrieval-Augmented Generation (RAG) knowledge base for grounding and against linguistic criteria.</li>
+                            <li><strong>Style/Compliance:</strong> Integrated tools (e.g., custom regex checks, Pylint, or domain-specific style checkers) to enforce rules like trademark usage, security disclaimers, and technical formatting.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Performance Tracking:</strong> Established a mechanism to log and track evaluation metrics (like BLEU, ROUGE, or a custom GenAI-Judge score) in an MLOps platform (e.g., MLflow) to prevent "prompt drift" and ensure continuous improvement.</li>
+                </ul>
+
+                <p><strong>Key Achievement:</strong> Reduced the human-in-the-loop validation time by 80% and established a robust quality gate for all GenAI deployments, significantly improving the trustworthiness of the generated documentation.</p>
+
+                <!-- === IMAGE #1 (placed directly below Key Achievement) === -->
+                <div class="text-center" style="margin: 20px 0;">
+                    <img src="../images/genai_image.png"
+                         alt="Generative AI Validation Pipeline Visualization"
+                         style="max-width: 100%; width: 100%; height: auto;">
+                </div>
+                <!-- ======================================================= -->
+
+            </section>
+
+
+            <!-- ===================================================== -->
+            <!-- PROJECT 2: Lithography Agent                           -->
+            <!-- ===================================================== -->
+
+            <section>
+                <h2 class="text-center">Lithography Agent: Dose-Focus Visualization Tool (NVIDIA NIMS)</h2>
+                <h3>Project Overview</h3>
+                <p>
+                    In this project I created a Dose-Focus Visualization Tool for computational lithography, 
+                    an essential step in semiconductor manufacturing. By leveraging NVIDIA NIM microservices 
+                    (specifically, a high-performance compute or simulation NIM), the agent accelerates the 
+                    calculation and visualization of the Process Window (Dose-Focus Matrix), which is critical 
+                    for optimizing the manufacturing process parameters for yield.
+                </p>
+
+                <h3>Technical Details & Innovation</h3>
+                <ul>
+                    <li><strong>The Problem:</strong> Traditional Dose-Focus (Exposure-Focus) simulation is computationally intensive, requiring long iteration cycles to predict the resulting pattern quality across a range of exposure dose and focal length settings.</li>
+                    <li><strong>NIMS Integration:</strong> Deployed the lithography simulation kernel (e.g., a custom physics-based model or a fast AI surrogate model) as an NVIDIA NIM, enabling high-throughput, low-latency inference on GPU-accelerated infrastructure. This decoupled the complex compute from the user-facing application.</li>
+                    <li><strong>Agent Logic:</strong> Developed a Python-based Lithography Agent (using a framework like LangChain or a custom logic loop) that interacts with the NIM. The agent receives a desired pattern and initial process parameters, executes a parallelized Dose-Focus Matrix calculation via the NIM endpoint, and processes the raw output.</li>
+                    <li><strong>Visualization Tool:</strong> The resulting data (e.g., predicted critical dimension (CD), pattern collapse probability) is transformed into an interactive Dose-Focus plot using libraries like Plotly or Matplotlib, allowing engineers to visually identify the optimal process window and analyze process variability.</li>
+                </ul>
+
+                <p><strong>Key Achievement:</strong> Accelerated the generation of a full Dose-Focus map from hours to minutes/seconds, providing a near-real-time feedback loop crucial for design-technology co-optimization (DTCO) in advanced node semiconductor fabrication.</p>
+
+                <!-- === IMAGE #2 (placed directly below Key Achievement) === -->
+
+                <div class="text-center" style="margin: 20px 0;">
+                    <img src="../images/streamlit_image.png"
+                         alt="Dose Focus Visualization Interface"
+                         style="max-width: 100%; width: 100%; height: auto;">
+                </div>
+                
+                <!-- ======================================================= -->
+
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
